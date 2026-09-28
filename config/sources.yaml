@@ -1,0 +1,17 @@
+amc: HDFC
+schemes:
+  - category: Large Cap
+    name: HDFC Large Cap Fund - Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth
+  - category: Flexi Cap
+    name: HDFC Flexi Cap Fund - Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth
+  - category: ELSS
+    name: HDFC ELSS Tax Saver Fund - Direct Plan Growth
+    url: https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth
+  - category: Small Cap
+    name: HDFC Small Cap Fund - Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth
+  - category: Balanced Advantage (Hybrid)
+    name: HDFC Balanced Advantage Fund - Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth
