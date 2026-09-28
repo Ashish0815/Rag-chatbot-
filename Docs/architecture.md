@@ -51,6 +51,7 @@ Two independent runs: ingestion is run once (or re-run when sources change) to p
 
 ### 2.3 Embedder (`ingestion/embedder.py`)
 - **Model**: `sentence-transformers/all-MiniLM-L6-v2` (384-dim embeddings, CPU-friendly, fast — appropriate for a 5-page demo corpus).
+- **Runtime note**: the implementation runs this exact model through Chroma's ONNX build (`ONNXMiniLM_L6_V2`) instead of the `sentence-transformers` library, because torch pushed peak memory to ~590 MB and the app is deployed on a 512 MB instance. Vectors are identical (cosine similarity 1.0 vs sentence-transformers); peak memory is now ~330 MB.
 - Same model instance/config used for both corpus chunks (batch, offline) and live user queries (single, online) — embedding space must match.
 
 ### 2.4 Vector Store (`ingestion/store.py`)

@@ -20,7 +20,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import streamlit as st
 
 from retrieval.guardrails import GREETING_RESPONSE
-from retrieval.pipeline import answer_query
 
 SCHEMES = [
     "HDFC Large Cap Fund - Direct Growth",
@@ -133,6 +132,10 @@ def _answer_turn(query: str) -> None:
     _render_message(user_message)
 
     with st.spinner("Thinking..."):
+        # Imported here, not at the top, so the page draws before chromadb and
+        # the embedding model load (slow on a small free-tier instance).
+        from retrieval.pipeline import answer_query
+
         response = answer_query(query, scheme_hint=st.session_state.last_scheme)
 
     assistant_message = {
